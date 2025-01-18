@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import { Handle, Position } from '@xyflow/react';
 import React from 'react';
+import CustomHandle from './CustomHandle';
 
 const PaymentInit = ({ data }) => {
   const { amount } = data;
@@ -17,7 +18,7 @@ const PaymentInit = ({ data }) => {
         ${amount}
         </Box>
       </Box>
-      <Handle type="source" position={Position.Right}/>
+      <CustomHandle type="source" position={Position.Right}/>
     </Box>
   );
 };

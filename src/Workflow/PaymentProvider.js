@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Icon, Typography } from '@mui/material'
 import IconButton from '@mui/material/IconButton';
 import { X } from 'react-bootstrap-icons';
+import { Handle, Position, useReactFlow } from '@xyflow/react';
+import CustomHandle from './CustomHandle';
 
 
 
@@ -13,7 +15,9 @@ const PAYMENT_PROVIDER_IMAGE_MAP = {
     Am: "https://static.wixstatic.com/media/d2252d_4c1a1bda6a774bd68f789c0770fd16e5~mv2.png",
   };
 
-const PaymentProvider = ({data:{name,code}}) => {
+const PaymentProvider = ({data:{name,code},id}) => {
+
+    const {setNodes} = useReactFlow();
   return (
     <Box
     sx={{ display: 'flex',
@@ -37,13 +41,15 @@ const PaymentProvider = ({data:{name,code}}) => {
             </Typography>
             </Box>
             <IconButton
-            color="red"
-            aria-label="Delete Payment Provider"
-            className="pointer-events-auto  p-1"
-            size="small"
+            sx={{color:"red",
+            className:"pointer-events-auto bg-transparent  p-1",
+            size:"small"
+            }}
+            onClick={()=> setNodes((prevNodes) => prevNodes.filter((node) => node.id !== id))}
             > 
             <X/>
             </IconButton>
+            <CustomHandle type="target" position={Position.Left}/>
     </Box>
   )
 }

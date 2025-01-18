@@ -44,5 +44,5 @@ export const initialNodes = [
         data: {},
         position: { x: 275, y: -100 },
         type: "paymentProviderSelect",
-      },
+      }
 ];
