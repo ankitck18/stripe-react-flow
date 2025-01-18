@@ -8,4 +8,15 @@ body {
   width: 100vw;
   height: 100vh;
 }
+.image-container {
+  height: 16px; /* Equivalent to 4 * 4px */
+  width: 16px;  /* Equivalent to 4 * 4px */
+}
+
+.payment-provider-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* Ensures the image fits within the box without distortion */
+}
+
  

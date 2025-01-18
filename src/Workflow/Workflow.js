@@ -4,9 +4,13 @@ import { useCallback } from 'react';
 import { addEdge } from 'reactflow';
 import { initialNodes,initialEdges } from './Workflow.constants';
 import PaymentInit from './PaymentInit';
+import PaymentCountry from './PaymentCountry';
+import PaymentProvider from './PaymentProvider';
 
 const nodeTypes = {
-  'paymentInit' : PaymentInit
+  'paymentInit' : PaymentInit,
+  'paymentCountry': PaymentCountry,
+  'paymentProvider' : PaymentProvider
 }
 
 
